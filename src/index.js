@@ -65,7 +65,7 @@ class NullstackUI {
         const { depth, node } = params;
         let style;
 
-        if (!node || !match({ node })) { return false; };
+        if (!node?.attributes || !match({ node })) { return false; };
 
         if (typeof window !== 'undefined' && window.matchMedia) {
             this.context.darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
